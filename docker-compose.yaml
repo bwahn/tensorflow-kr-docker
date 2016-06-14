@@ -1,0 +1,143 @@
+#
+#
+version: '2'
+services:
+####
+  ps-0:
+    build: ./tf-worker/
+    container_name: ps-0
+    image: ps-0:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: ps-0
+
+  ps-1:
+    build: ./tf-worker/
+    container_name: ps-1
+    image: ps-1:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: ps-1
+
+  ps-2:
+    build: ./tf-worker/
+    container_name: ps-2
+    image: ps-2:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: ps-2
+
+  ps-3:
+    build: ./tf-worker/
+    container_name: ps-3
+    image: ps-3:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: ps-3
+####
+  worker-0:
+    build: ./tf-worker/
+    container_name: worker-0
+    image: worker-0:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-0
+
+  worker-1:
+    build: ./tf-worker/
+    container_name: worker-1
+    image: worker-1:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-1
+
+  worker-2:
+    build: ./tf-worker/
+    container_name: worker-2
+    image: worker-2:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-2
+
+  worker-3:
+    build: ./tf-worker/
+    container_name: worker-3
+    image: worker-3:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-3
+
+  worker-4:
+    build: ./tf-worker/
+    container_name: worker-4
+    image: worker-4:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-4
+
+  worker-5:
+    build: ./tf-worker/
+    container_name: worker-5
+    image: worker-5:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-5
+
+  worker-6:
+    build: ./tf-worker/
+    container_name: worker-6
+    image: worker-6:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-6
+
+  worker-7:
+    build: ./tf-worker/
+    container_name: worker-7
+    image: worker-7:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: worker-7
+
+####
+  master-0:
+    build: ./tf-worker/
+    container_name: master-0
+    image: master-0:0.1
+    ports:
+      - "8080"
+    environment:
+      POD_NAME: master-0
+
+####
+  jupyter-server:
+    build:
+      context: ./tf-jupyter/
+    container_name: tf-jupyter-server
+    image: tf-jupyter-server:0.1
+    ports:
+      - "8888:8888"
+      - "80:80"
+    volumes:
+      - /tmp/tf/tensorflow-logs:/var/log/tensorflow
+####
+  tf-tensorboard-server:
+    image: gcr.io/tensorflow/tensorflow:latest-devel
+    container_name: tf-tensorboard-server
+    ports:
+      - "6006:6006"
+    command: /tensorflow/bazel-bin/tensorflow/tensorboard/tensorboard --logdir=/var/log/tensorflow
+    volumes:
+      - /tmp/tf/tensorflow-logs:/var/log/tensorflow
