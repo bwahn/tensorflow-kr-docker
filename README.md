@@ -13,7 +13,7 @@ intro_word2vec_distributed.ipynb
 => url = 'http://mattmahoney.net/dc/'
 => filename = maybe_download('text8.zip', 31344016)
 
-----
+
 $ mkdir weave
 $ cd weave
 $ wget -O docker-compose.yml http://git.io/scope-compose
