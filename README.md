@@ -1,19 +1,21 @@
 # tensorflow-kr-docker
 slide : http://www.slideshare.net/EricAhn/tensorflow-in-docker 
 
-
 ```
 $ git clone https://github.com/bwahn/tensorflow-kr-docker.git
 
 $ cd tensorflow-kr-docker
 
-$ docker-compose -f docker-compose.yaml
+$ docker-compose -f docker-compose.yaml build
+
+$ docker-compose -f docker-compose.yaml up -d
+
 ```
 
 Jupyter : http://192.168.99.101:8888/tree
 
 ```
-intro_word2vec_distributed.ipynb
+You have to change in intro_word2vec_distributed.ipynb
 => url = 'http://mattmahoney.net/dc/'
 => filename = maybe_download('text8.zip', 31344016)
 ```
