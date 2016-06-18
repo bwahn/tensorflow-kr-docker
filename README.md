@@ -21,7 +21,7 @@ $ cd weave
 $ wget -O docker-compose.yml http://git.io/scope-compose
 
 $ docker-compose up -d
-
+---
 $ docker ps -a
 
 CONTAINER ID  IMAGE            PORTS                 NAMES
