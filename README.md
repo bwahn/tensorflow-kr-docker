@@ -1,6 +1,7 @@
 # tensorflow-kr-docker
 slide : http://www.slideshare.net/EricAhn/tensorflow-in-docker 
 
+---
 $ git clone https://github.com/bwahn/tensorflow-kr-docker.git
 
 $ cd tensorflow-kr-docker
@@ -21,7 +22,8 @@ $ cd weave
 $ wget -O docker-compose.yml http://git.io/scope-compose
 
 $ docker-compose up -d
----
+
+
 $ docker ps -a
 
 CONTAINER ID  IMAGE            PORTS                 NAMES
