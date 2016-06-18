@@ -15,9 +15,13 @@ intro_word2vec_distributed.ipynb
 
 
 $ mkdir weave
+
 $ cd weave
+
 $ wget -O docker-compose.yml http://git.io/scope-compose
+
 $ docker-compose up -d
+
 $ docker ps -a
 CONTAINER ID  IMAGE            PORTS                 NAMES
 fe41c10a63ca  tns_lb1:latest   0.0.0.0:8001->80/tcp  tns_lb1_1
